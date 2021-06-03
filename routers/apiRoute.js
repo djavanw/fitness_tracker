@@ -1,25 +1,42 @@
 const express = require("express");
 const router = new express.Router();
-const Workouts = require("../models/workout.js");
+const Workout = require("../models/workout.js");
 
-router.get("/workouts", async (req, res) => {
+// router.post("/api/workouts", (req, res) => {
+//     Workout.create ({})
+//     .then(
+//         daWorkout => {
+//             res.json(daWorkout);
+//         }
+//     )
+//     .catch(error => {
+//         res.json(error);
+//     });
+// });
+
+router.post("/api/workouts", ({ body }, res) => {
+    Workout.create(body)
+    .then(daWorkout => {
+        res.status(202).send(daWorkout);
+    })
+    .catch(error => {
+        res.status(400).json(error);
+    })
+});
+
+
+
+router.get("/api/workouts", async (req, res) => {
     try{
-        const daworkouts = await Workouts.find({})
+        const daworkouts = await Workout.find({})
         res.status(202).send(daworkouts)
     } catch(error) {
         res.status(500).send()
     }
 });
 
-router.post("/workouts", async (req, res) => {
-    const daEntry = new Workouts(req.body)
-    try{
-        await Workouts.save()
-        res.status(202).send(daEntry)
-    } catch(error) {
-        res.status(400).send()
-    }
-});
+
+
 
 
 

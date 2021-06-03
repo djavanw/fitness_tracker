@@ -4,20 +4,39 @@ const validator = require("validator");
 const Schema = mongoose.Schema;
 
 const workoutSchema = new Schema ({
-    name: {
-        type: String,
-        required: true,
-        trim: true
+    day: {
+        type: Date,
+        default: () => new Date()
     },
-    kind_of: {
-        type: String,
-        required: true,
-    },
-    weight: {
-        type: Number,
-        required: true,
-    }
-
+    exercises: [
+        {
+            name: {
+                type: String,
+                required: true,
+                trim: true
+            },
+            type: {
+                type: String,
+                required: true
+            },
+            weight: {
+                type: Number,
+                required: true
+            },
+            sets: {
+                type: Number
+            },
+            reps: {
+                type: Number
+            },
+            duration: {
+                type: Number
+            },
+            distance: {
+                type: Number
+            }
+        }
+    ]
 });
 
 

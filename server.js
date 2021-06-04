@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const apiRoute = require("./routers/apiRoute");
 const viewRoute = require("./routers/viewRoute");
 
+
 // Logger middleware
 const morgan = require("morgan");
 
@@ -14,6 +15,7 @@ const app = express();
 app.use(morgan("dev"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
 
 app.use(express.static("public"));
 

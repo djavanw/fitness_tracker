@@ -121,7 +121,21 @@ let workoutSeed = [
         sets: 4
       }
     ]
-  }
+  },
+  // {
+  //   day: new Date(new Date().setDate(new Date().getDate() - 1)),
+  //   exercises: [
+  //     {
+  //       type: "resistance",
+  //       name: "Lateral Press",
+  //       duration: 25,
+  //       weight: 165,
+  //       reps: 12,
+  //       sets: 3
+  //     }
+  //   ]
+  // }
+
 ];
 
 db.Workout.deleteMany({})

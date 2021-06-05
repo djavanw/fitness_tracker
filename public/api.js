@@ -41,4 +41,28 @@ const API = {
 
     return json;
   },
+
+  async deleteWorkout(data) {
+    const sid = location.search.split("=")[1];
+
+    const del = await fetch("/api/workouts/" + sid, {
+      method: "DELETE",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data)
+    });
+
+    const json = await del.json();
+
+    return json;
+  },
+
+
+
+
+
+
+
+
+
+
 };

@@ -2,30 +2,6 @@ const router = require("express").Router();
  
 const { Workout } = require("../models");
 
-// router.post("/api/workouts", async (req, res) => {
-//     try{
-//         const newExer = await Workout.create({
-//             ...req.body,
-//         });
-//         res.status(202).json(newExer);
-//     } catch(error) {
-//         res.status(400).json(error);
-//     }
-// })
-
-// router.post("/api/workouts", (req, res) => {
-//     Workout.create ({})
-//     .then(
-//         daWorkout => {
-//             res.json(daWorkout);
-//         }
-//     )
-//     .catch(error => {
-//         res.json(error);
-//     });
-// });
-
-
 router.post("/api/workouts", async ({ body }, res) => {
     try{
         const daWorkout2 = await Workout.create(body);
@@ -36,7 +12,6 @@ router.post("/api/workouts", async ({ body }, res) => {
     }
 });
 
-
 router.put("/api/workouts/:id", async ({body, params}, res) => {
     try{
         const daworkouts = await Workout.findByIdAndUpdate({_id: params.id},{ $push:{exercises: body}},
@@ -45,10 +20,10 @@ router.put("/api/workouts/:id", async ({body, params}, res) => {
         //const daworkouts = await Workout.updateOne({_id: params.id},{ $push:{exercises: body}})
         res.status(200).json(daworkouts)
     } catch(error) {
+        console.log(error)
     res.status(500).json("There is an error in the put route.")
     }
 });
-
 
 
 router.get("/api/workouts", async (req, res) => {
@@ -79,9 +54,9 @@ router.get("/api/workouts/range", async (req, res) => {
             {
                 $sort: {day: -1} 
             },
-            // {
-            //     $limit: 7
-            // }
+            {
+                $limit: 7
+            }
         ])
             res.status(201).json(daRange)
     } catch(error) {
@@ -92,8 +67,8 @@ router.get("/api/workouts/range", async (req, res) => {
 /*******************DELETE************************************** */
 router.delete("/api/workouts/:id", async ({body, params}, res) => {
     try{
-        const daworkouts = await Workout.findByIdAndDelete({_id: params.id},{ $pull:{workouts: body}}
-        )
+        const daworkouts = await Workout.findByIdAndDelete({_id: params.id},
+            { $pull:{workouts: body}})
         //const daworkouts = await Workout.updateOne({_id: params.id},{ $push:{exercises: body}})
         console.log(daworkouts)
         res.status(200).json(daworkouts)
@@ -102,25 +77,7 @@ router.delete("/api/workouts/:id", async ({body, params}, res) => {
     }
 });
 
-
 /*******************DELETE************************************* */
-
-/*,{ $push:{exercises: body}}*/
-//const daworkouts = await Workout.updateOne({_id: params.id},
-//     } catch() {
-//     res.status(500).json()
-//     }
-// });
-
-
-
-
-
-
-
-
-
-
 
 
 module.exports = router;

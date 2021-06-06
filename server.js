@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 const apiRoute = require("./routers/apiRoute");
 const viewRoute = require("./routers/viewRoute");
 
-
 // Logger middleware
 const morgan = require("morgan");
 

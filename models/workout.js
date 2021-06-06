@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-//const validator = require("validator");
 
 const Schema = mongoose.Schema;
 
@@ -24,7 +23,7 @@ const workoutSchema = new Schema ({
             },
             weight: {
                 type: Number,
-                required: true
+                required: false
             },
             reps: {
                 type: Number

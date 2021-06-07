@@ -1,5 +1,4 @@
 const router = require("express").Router();
- 
 const { Workout } = require("../models");
 
 router.post("/api/workouts", async ({ body }, res) => {
@@ -32,9 +31,8 @@ router.get("/api/workouts", async (req, res) => {
             {
               $addFields: {
                 totalDuration: { $sum: "$exercises.duration" } ,
-                
               }
-            } 
+            }
         ])
             res.status(200).json(daworkouts)
     } catch(error) {
@@ -42,7 +40,7 @@ router.get("/api/workouts", async (req, res) => {
         }
 });
 
-
+// last 7 completed workouts sorted to see most recent
 router.get("/api/workouts/range", async (req, res) => {
     try{
         const daRange = await Workout.aggregate([
@@ -52,7 +50,7 @@ router.get("/api/workouts/range", async (req, res) => {
                 }  
             },
             {
-                $sort: {day: -1} 
+                $sort: {_id: -1} 
             },
             {
                 $limit: 7
@@ -62,7 +60,24 @@ router.get("/api/workouts/range", async (req, res) => {
     } catch(error) {
         res.status(400).json(error);
         }
-}); 
+});
+
+
+router.get("/api/workouts/graphic", async (req, res) => {
+    try{
+        const daCircle = await Workout.aggregate([
+            {
+                $addFields: {
+                    totalDuration: { $sum: "$exercises.duration" } ,
+                }  
+            }
+        ])
+            res.status(201).json(daCircle)
+    } catch(error) {
+        res.status(400).json(error);
+        }
+});
+
 
 /*******************DELETE************************************** */
 router.delete("/api/workouts/:id", async ({body, params}, res) => {

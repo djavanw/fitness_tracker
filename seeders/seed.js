@@ -12,9 +12,9 @@ let workoutSeed = [
     exercises: [
       {
         type: "resistance",
-        name: "Bicep Curl",
+        name: "Bicep Curls",
         duration: 20,
-        weight: 100,
+        weight: 75,
         reps: 10,
         sets: 4
       }
@@ -27,7 +27,7 @@ let workoutSeed = [
         type: "resistance",
         name: "Lateral Pull",
         duration: 20,
-        weight: 300,
+        weight: 295,
         reps: 10,
         sets: 4
       }
@@ -52,8 +52,8 @@ let workoutSeed = [
       {
         type: "cardio",
         name: "Running",
-        duration: 25,
-        distance: 4
+        duration: 35,
+        distance: 2
       }
     ]
   },
@@ -62,9 +62,9 @@ let workoutSeed = [
     exercises: [
       {
         type: "resistance",
-        name: "Bench Press",
+        name: "Let Press",
         duration: 20,
-        weight: 285,
+        weight: 250,
         reps: 10,
         sets: 4
       }
@@ -75,9 +75,9 @@ let workoutSeed = [
     exercises: [
       {
         type: "resistance",
-        name: "Bench Press",
+        name: "Stiff Army Press",
         duration: 20,
-        weight: 300,
+        weight: 75,
         reps: 10,
         sets: 4
       }
@@ -89,8 +89,8 @@ let workoutSeed = [
       {
         type: "resistance",
         name: "Quad Press",
-        duration: 30,
-        weight: 300,
+        duration: 25,
+        weight: 275,
         reps: 10,
         sets: 4
       }
@@ -101,9 +101,9 @@ let workoutSeed = [
     exercises: [
       {
         type: "resistance",
-        name: "Bench Press",
+        name: "Lateral Press",
         duration: 20,
-        weight: 300,
+        weight: 150,
         reps: 10,
         sets: 4
       }
@@ -115,7 +115,7 @@ let workoutSeed = [
       {
         type: "resistance",
         name: "Military Press",
-        duration: 20,
+        duration: 15,
         weight: 300,
         reps: 10,
         sets: 4
@@ -128,7 +128,7 @@ let workoutSeed = [
       {
         type: "resistance",
         name: "Lateral Press",
-        duration: 25,
+        duration: 30,
         weight: 165,
         reps: 12,
         sets: 3

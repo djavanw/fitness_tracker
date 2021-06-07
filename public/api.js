@@ -42,6 +42,15 @@ const API = {
     return json;
   },
 
+// added to properly add the exercises on the pie charts
+  async getWorkoutsGraphic() {
+    const res = await fetch(`/api/workouts/graphic`);
+    const json = await res.json();
+
+    return json;
+  },
+
+// added because there was no delete api
   async deleteWorkout(data) {
     const sid = location.search.split("=")[1];
 
@@ -55,14 +64,5 @@ const API = {
 
     return json;
   },
-
-
-
-
-
-
-
-
-
 
 };

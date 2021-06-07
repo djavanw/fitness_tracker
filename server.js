@@ -21,8 +21,9 @@ app.use(express.static("public"));
 mongoose.connect(process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/fitness_db", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
+    useCreateIndex: true,
     useFindAndModify: false,
-    useCreateIndex: true
+    
 });
 
 // Make the routes

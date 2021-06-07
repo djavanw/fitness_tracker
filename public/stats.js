@@ -25,11 +25,10 @@ function populateChart(data) {
   let durations = data.map(({ totalDuration }) => totalDuration);
   let pounds = calculateTotalWeight(data);
   let workouts = workoutNames(data);
-  const colors = generatePalette();
+  //const colors = generatePalette();
 
   let line = document.querySelector('#canvas').getContext('2d');
   let bar = document.querySelector('#canvas2').getContext('2d');
-  // different route made below for pie charts
   // let pie = document.querySelector('#canvas3').getContext('2d');
   // let pie2 = document.querySelector('#canvas4').getContext('2d');
 
@@ -134,13 +133,15 @@ function populateChart(data) {
   });
 }
 
-// added to properly add the exercises on the pie charts
+
 function populateGraphic(data) {
   let durations = data.map(({ totalDuration }) => totalDuration);
   let pounds = calculateTotalWeight(data);
   let workouts = workoutNames(data);
   const colors = generatePalette();
 
+  // let line = document.querySelector('#canvas').getContext('2d');
+  // let bar = document.querySelector('#canvas2').getContext('2d');
   let pie = document.querySelector('#canvas3').getContext('2d');
   let pie2 = document.querySelector('#canvas4').getContext('2d');
 
@@ -219,5 +220,5 @@ function workoutNames(data) {
 // get all workout data from back-end
 API.getWorkoutsInRange().then(populateChart);
 
-// added to properly add the exercises on the pie charts
+// route needed for pie charts accuracy
 API.getWorkoutsGraphic().then(populateGraphic);

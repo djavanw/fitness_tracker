@@ -27,13 +27,14 @@ router.put("/api/workouts/:id", async ({body, params}, res) => {
 
 router.get("/api/workouts", async (req, res) => {
     try{
-        const daworkouts = await Workout.aggregate( [
+        const daworkouts = await Workout.aggregate([
             {
               $addFields: {
                 totalDuration: { $sum: "$exercises.duration" } ,
               }
             }
-        ])
+       ])
+        
             res.status(200).json(daworkouts)
     } catch(error) {
          res.status(500).json()
@@ -50,7 +51,7 @@ router.get("/api/workouts/range", async (req, res) => {
                 }  
             },
             {
-                $sort: {_id: -1} 
+                $sort: {day: -1} 
             },
             {
                 $limit: 7
@@ -62,22 +63,28 @@ router.get("/api/workouts/range", async (req, res) => {
         }
 });
 
-
+// route needed for pie charts accuracy
 router.get("/api/workouts/graphic", async (req, res) => {
     try{
-        const daCircle = await Workout.aggregate([
+        const daRange = await Workout.aggregate([
             {
                 $addFields: {
                     totalDuration: { $sum: "$exercises.duration" } ,
                 }  
-            }
+            },
+            // {
+            //     $sort: {day: -1} 
+            // },
+            // {
+            //     $limit: 7
+            // }
         ])
-            res.status(201).json(daCircle)
+       
+            res.status(201).json(daRange)
     } catch(error) {
         res.status(400).json(error);
         }
-});
-
+}); 
 
 /*******************DELETE************************************** */
 router.delete("/api/workouts/:id", async ({body, params}, res) => {

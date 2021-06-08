@@ -42,7 +42,7 @@ const API = {
     return json;
   },
 
-// needed for pie chart accuracy
+// needed to allow more than 7 exercise names 
   async getWorkoutsGraphic() {
     const res = await fetch(`/api/workouts/graphic`);
     const json = await res.json();

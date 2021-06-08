@@ -5,9 +5,8 @@
 ***
 
   ## Description:
-  XXXXX
-  
-  
+  This is an application that allows a user to input exercises for a resistance or cardio workout.  Persistence storage is used to save the workout with a NoSQL database.  MongoDb is the database structure with the use of Mongoose for ease of use.  A middleware module called Morgan is used for as an entry logger that displays critical information for debugging or general monitoring.    
+   
 ***
   ## Table of Contents:
   1.  [Description](#description)
@@ -23,51 +22,39 @@
 
 ***
   ## Demonstration:
-  [Deployed website link]()
+  [Deployed website link](https://rocky-plateau-46275.herokuapp.com/stats)
 
 ***
   ## Installation:
-  To use this application, the user can fork or clone.  Then run `npm install`. See the technologies section for the application dependencies.  In addition, the user will need to connect to an active database server for full functionality.  However, any users may freely use this deployed application at the above deploy application website.
+  To use this application, the user can fork or clone.  Then run `npm install`. See the technologies section for the application dependencies.  In addition, the user will need to connect to an active or local Mongo database server for full functionality.  However, any users may freely use this deployed application at the above deploy application website.
 
 ***
   ## Screenshots:
   ### (Deployed Application)
-  ![Deployed Application](./public/images/)
+  ![Deployed Application](./public/image/fitness_tracker_deployed.jpeg)
 
-  ### (User Login)
-  ![User Login](./public/images/)
+  ### (Enter Exercise)
+  ![Enter Exercise](./public/image/exercise_entry.jpeg)
 
-  ### (User Inventory)
-  ![User Inventory List](./public/images/)
+  ### (Two Workouts)
+  ![Two Workouts](./public/image/two_exercises.jpeg)
 
-  ### (Reviewing Inventory)
-  ![Reviewing Inventory](./public/images/)
-
-  ### (Adding Inventory)
-  ![Adding Inventory](./public/images/)
-
-  ### (New Inventory)
-  ![New Inventory](./public/images/)
-
-  ### (Catalog Search)
-  ![Catalog Search](./public/images/)
-
-  ### (Gun Safety)
-  ![Safety](./public/images/)
+  ### (Full Workouts)
+  ![Full Workouts](./public/image/many_exercises_seeded.jpeg)
 
 ***
   ## Technologies
     - Node.js
-    - Handlebars.js
-    - MySQL2
-    - Sequelize
-    - Express-session
+    - Express.js
+    - MongoDB
+    - Mongoose
+    - Javascript
     - Dotenv
-    - Bcrypt
-    - Countapi-js 
+    - Morgan
+    - Bootstrap 
 
   ## Usage:
-  XXXXX This application utilizes several web and database technologies that allows a user to review gun safety articles, broswse guns on an electronic catalog, and store and retrieve a personal gun inventory.  The gun inventory is entered by the user and the application will save the information for later use.  The user gains all of this functionality when he/she is logged into the application.  A MySQL database is used to store user informatio, the users inventory, and the gun catalog.  The website has a secure authentication process to access the website for both current and new users.  
+  This application utilizes several web and database technologies that allows a user to enter workout exercises to a database, complete a workout that is started, or start a new workout.  MongoDB Atlas is used to store the exercises and workouts in the database.  There is a graph that depicts the duration of the workouts and an addition graph that displays amount of cuminative weight that has been lifted.  There are pie charts on the bottom that gives a visual presentation of the exercises completed. The Morgan logger module is used to monitor user request and responses.   
    
 ***
   ## License:
@@ -89,7 +76,7 @@
 
 ***
   ## Tests:
-  There are some test for this application.  The data/communication routes must be verified before this application can be properly deployed.  In addition, there must be an operational database  and it must be connected to the application to receive the full functionality.  
+  There are some test for this application.  The data/communication routes must be verified before this application can be properly deployed.  In addition, there must be an operational database and it must be connected to the application to receive the full functionality.  
 
 ***
   ## Questions:

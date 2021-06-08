@@ -25,9 +25,9 @@ let workoutSeed = [
     exercises: [
       {
         type: "resistance",
-        name: "Lateral Pull",
+        name: "Incline Bench",
         duration: 20,
-        weight: 295,
+        weight: 205,
         reps: 10,
         sets: 4
       }
@@ -38,7 +38,7 @@ let workoutSeed = [
     exercises: [
       {
         type: "resistance",
-        name: "Push Press",
+        name: "Push Ups",
         duration: 25,
         weight: 185,
         reps: 8,
@@ -54,6 +54,14 @@ let workoutSeed = [
         name: "Running",
         duration: 35,
         distance: 2
+      },
+      {
+        type: "resistance",
+        name: "Bent Rows",
+        duration: 24,
+        weight: 110,
+        reps: 10,
+        sets: 3
       }
     ]
   },
@@ -62,8 +70,8 @@ let workoutSeed = [
     exercises: [
       {
         type: "resistance",
-        name: "Let Press",
-        duration: 20,
+        name: "Leg Press",
+        duration: 28,
         weight: 250,
         reps: 10,
         sets: 4
@@ -75,7 +83,7 @@ let workoutSeed = [
     exercises: [
       {
         type: "resistance",
-        name: "Stiff Army Press",
+        name: "Stiff Arm Press",
         duration: 20,
         weight: 75,
         reps: 10,
@@ -88,7 +96,7 @@ let workoutSeed = [
     exercises: [
       {
         type: "resistance",
-        name: "Quad Press",
+        name: "Squats",
         duration: 25,
         weight: 275,
         reps: 10,

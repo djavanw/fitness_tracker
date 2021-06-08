@@ -102,6 +102,7 @@ function populateChart(data) {
             'rgba(75, 192, 192, 0.2)',
             'rgba(153, 102, 255, 0.2)',
             'rgba(255, 159, 64, 0.2)',
+            'rgba(59, 87, 88, 0.2)',
           ],
           borderColor: [
             'rgba(255, 99, 132, 1)',
@@ -110,6 +111,7 @@ function populateChart(data) {
             'rgba(75, 192, 192, 1)',
             'rgba(153, 102, 255, 1)',
             'rgba(255, 159, 64, 1)',
+            'rgba(59, 87, 88, 1)',
           ],
           borderWidth: 1,
         },
@@ -133,7 +135,7 @@ function populateChart(data) {
   });
 }
 
-
+// seperated to allow there to be more than 7 exercise names
 function populateGraphic(data) {
   let durations = data.map(({ totalDuration }) => totalDuration);
   let pounds = calculateTotalWeight(data);
@@ -220,5 +222,5 @@ function workoutNames(data) {
 // get all workout data from back-end
 API.getWorkoutsInRange().then(populateChart);
 
-// route needed for pie charts accuracy
+// route needed to allow more than 7 exercise names to show
 API.getWorkoutsGraphic().then(populateGraphic);
